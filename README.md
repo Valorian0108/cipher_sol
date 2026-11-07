@@ -1,10 +1,16 @@
-# Krypt on Solana
+# CIPHER on Solana
 
-Krypt bounds what an AI agent may spend. The money sits in a per-owner
+CIPHER bounds what an AI agent may spend. The money sits in a per-owner
 vault that is a program-derived address on Solana devnet, and the vault's
 rules live in program state that the agent cannot edit. The agent can ask
 the vault to pay. It cannot take money out, change the rules, or approve
 its own request.
+
+The product name is CIPHER, spelled that way everywhere it is typed. The psi
+in the demo page's header mark is drawn only, because domains, package names,
+and submission forms are ASCII. The Rust crate and the deployed program keep
+their build name, krypt_solana, since renaming them would mean redeploying,
+and the NEAR ancestor of this gate is Krypt.
 
 This is the Solana reference implementation of the same gate that runs on
 NEAR as Krypt (github.com/Valorian0108/krypt). The thesis is chain-agnostic.
@@ -19,7 +25,7 @@ caller and the rules first.
 
 An AI agent that can spend is an agent that can be tricked into spending
 wrong. Handing it a wallet with a normal keypair makes the drain total the
-moment it is manipulated. Krypt removes the need to trust the agent. The
+moment it is manipulated. CIPHER removes the need to trust the agent. The
 owner writes rules as data: a cap per purchase, an auto-approve line, a
 budget for the run, and an allowlist of payees. Every request is checked
 against those rules in a fixed order and ends one of three ways: settled,

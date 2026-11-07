@@ -5,7 +5,8 @@ it aloud once.
 
 ## Project name
 
-krypt-solana (working name, rename decision still open)
+CIPHER. The psi in the header mark is drawn only. The name is spelled CIPHER
+everywhere it is typed, because domains, package names, and forms are ASCII.
 
 ## Tracks
 
@@ -19,7 +20,7 @@ and the vault's on-chain rules decide, with a receipt for every decision.
 ## Description for the form
 
 An AI agent that can spend is an agent that can be tricked into spending
-wrong. Krypt removes the need to trust the agent. The owner's money sits in
+wrong. CIPHER removes the need to trust the agent. The owner's money sits in
 a vault that is a program-derived address on Solana, so no key anywhere can
 sign a transfer out of it. The only door is program code that checks the
 caller and the owner's rules: a cap per purchase, an auto-approve line, a

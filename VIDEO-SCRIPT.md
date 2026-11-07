@@ -17,7 +17,8 @@ explain. Target length: about 3 minutes.
 ## Scene 1: The problem (15s, screen: HOME)
 
 On screen: the big title and the three step boxes.
-The point: you own a business and you have a worker you trust to work, but
+Say the name in your first five seconds: this is CIPHER. Then the point: you
+own a business and you have a worker you trust to work, but
 not to carry your money. In the old days you hand him cash and hope. You
 cannot watch his every step.
 
@@ -76,12 +77,12 @@ buyer: no goods leave without a settled receipt naming them.
 
 ## Scene 9: Close (20s, any screen or camera on you)
 
-The point, three sentences: what it is (a spending gate for AI agents on
-Solana, program address on screen or in the description), what is
+The point, three sentences: what it is (CIPHER, a spending gate for AI agents
+on Solana, program address on screen or in the description), what is
 verified (a five-attack suite where every prediction held, all on public
-devnet), and what is next (a consumer version where a stranger signs up
-with a passkey, sees dollars, never sees a key: already being built in a
-second app).
+devnet), and what is next (a consumer version, also CIPHER, where a stranger
+signs up with a passkey, sees dollars, never sees a key: already being built
+in a second app).
 
 ## If something goes wrong mid-take
 

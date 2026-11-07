@@ -42,7 +42,29 @@ body {
   z-index: 20;
 }
 
-.brand { font-family: var(--display); font-size: 22px; letter-spacing: -0.5px; }
+.brand {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+/* The drawn mark. The psi lives only on screen. Everywhere the name is typed,
+   a domain, a package, a submission form, it is spelled CIPHER. */
+.brand .psi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 24px;
+  margin: 0 2px;
+  color: var(--ink);
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.brand .psi svg { display: block; }
 .brand .tm {
   font-family: var(--mono);
   font-size: 10px;
