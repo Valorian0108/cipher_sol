@@ -119,26 +119,11 @@ npm run attack
 | Plain transfer out of the vault, no program | Fails, a PDA cannot sign |
 | Agent approves its own queued spend | Error, caller is not the owner |
 
-## Solana, and the honest difference from NEAR
+## Why Solana
 
-This is the Solana version of the same gate that runs on NEAR as Krypt
-(github.com/Valorian0108/krypt). The idea does not belong to either chain.
-
-They differ in one place. NEAR gives you a scoped key at the protocol level.
-Solana has no such thing, because a keypair there is full access or nothing.
-So the wall moves into the program. The vault is a PDA with no key, and
-lamports only leave through code that has already run its checks.
-
-That changes the attack story and it is worth being straight about it. On NEAR
-two of the five attacks die at the network layer before the contract is even
-reached. On Solana none die at the network layer, because there is no
-network-layer scope to die at. All five die at the program. Same gate,
-different place to put the wall, and the placement is a property of the chain
-rather than a design preference.
-
-Solana supplies the economics as well. Twenty settled micropayments in seconds
-at a fraction of a cent each is per-call machine pricing, which does not work
-on a chain with a dollar-scale fee.
+Twenty settled micropayments in seconds at a fraction of a cent each is
+per-call machine pricing, which does not work on a chain with a dollar-scale
+fee.
 
 ## Limitations
 
@@ -147,7 +132,7 @@ on a chain with a dollar-scale fee.
 - The budget is a total for the run, not a rolling window.
 - The agent key is a normal Solana keypair. It holds its own small balance and
   could spend that freely. What it cannot do is touch the vault except through
-  `request_spend`. On NEAR the key is the first wall. Here the program is.
+  `request_spend`.
 - Receipts are public. Selective disclosure is not built.
 - The bundled agent is deterministic on purpose. It stands in for any agent,
   because the guarantees come from the program and not from how the agent
@@ -155,9 +140,9 @@ on a chain with a dollar-scale fee.
 
 ## Prior work, disclosed
 
-- The policy design, the errand and attack structure, and the dry mode come
-  from Krypt on NEAR, built by the same owner during the NEAR hackathon window
-  in November 2026.
+- The policy design, the errand and attack structure, and the dry mode descend
+  from earlier work by the same owner. The Solana program, the agent suite,
+  and the demo pages were built for this hackathon.
 - The web design system used by the demo pages is the owner's own and predates
   this event.
 - Third-party libraries: anchor-lang, @anchor-lang/core, @solana/web3.js,

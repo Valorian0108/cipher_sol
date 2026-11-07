@@ -40,11 +40,9 @@ RPC: no subscription, no invoice, the receipt is the payment proof.
 The build ships a dry mode that answers "what would you do with this
 request" using the real decision code and writing nothing, and a
 five-scenario attack suite where each outcome is predicted before sending
-and the harness stops if reality disagrees. On Solana the wall lives in the
-program, because Solana has no scoped keys: the same gate on NEAR loses two
-of five attacks at the network layer, while here all five die at the
-program. Same gate, different wall placement, and the placement is a
-property of the chain.
+and the harness stops if reality disagrees. All five attacks die at the
+program: the vault has no private key to steal, and lamports only leave
+through code that has already checked the owner's rules.
 
 ## Links to fill
 
