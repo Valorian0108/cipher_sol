@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE SHOP, an agent commerce demo on Solana devnet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">THE SHOP<span class="tm">name pending</span></div>
+    <nav>
+      <a href="#/" data-nav>HOME</a>
+      <a href="#/setup" data-nav>SETUP</a>
+      <a href="#/shop" data-nav>SHOP</a>
+      <a href="#/report" data-nav>REPORT</a>
+      <a href="#/audit" data-nav>AUDIT</a>
+    </nav>
+    <div class="vault-chip mono" id="vault-chip">vault ...</div>
+  </header>
+
+  <!-- LANDING -->
+  <section id="screen-home" class="screen">
+    <div class="hero card hard">
+      <h1>GIVE AN AI AGENT MONEY<br/>WITHOUT GIVING IT TRUST</h1>
+      <p class="pitch">
+        An agent shops at machine prices. A vault on Solana devnet decides
+        every purchase against rules the owner set. Small calls settle
+        alone. Big ones wait for a human. Wrong ones are refused. Every
+        decision writes a receipt anyone can open.
+      </p>
+      <a class="btn big yellow" href="#/shop" data-nav>OPEN THE SHOP</a>
+    </div>
+    <div class="steps">
+      <div class="card hard step"><div class="step-n">1</div><h3>OWNER SETS RULES</h3><p>Cap per purchase, auto-approve line, budget, allowlist. Written on chain. The agent cannot edit any of it.</p></div>
+      <div class="card hard step"><div class="step-n">2</div><h3>AGENT SHOPS</h3><p>A task goes in. The agent plans the purchases and pays through the gate. Refusals come back with readable reasons.</p></div>
+      <div class="card hard step"><div class="step-n">3</div><h3>VENDOR DELIVERS</h3><p>The merchant reads the receipt from devnet by RPC and releases the data. No account, no invoice, no trust.</p></div>
+    </div>
+    <p class="honest">Devnet test money. Deterministic agent. Nothing on this page is mocked: every status below came from a transaction.</p>
+  </section>
+
+  <!-- SETUP -->
+  <section id="screen-setup" class="screen">
+    <h2 class="head">SETUP, THE GATE GETS BUILT</h2>
+    <p class="lede">Five owner actions, each one a transaction on devnet. The vault fails closed until rules exist.</p>
+    <div id="setup-steps" class="setup-list"></div>
+    <div class="row">
+      <button class="btn yellow" id="btn-setup">RUN SETUP</button>
+      <button class="btn blue" id="btn-topup">TOP UP BUDGET</button>
+      <span class="note" id="setup-note"></span>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="screen-shop" class="screen">
+    <h2 class="head">THE SHOP</h2>
+    <div class="shop-grid">
+      <div>
+        <div class="card hard" id="task-panel">
+          <h3>PICK A TASK FOR THE AGENT</h3>
+          <div id="task-cards" class="task-cards"></div>
+        </div>
+        <div class="card hard" id="plan-card" style="display:none;">
+          <h3>THE PLAN, BEFORE ANY SPENDING</h3>
+          <div id="plan-list"></div>
+        </div>
+        <div id="approval-slot"></div>
+        <div class="card hard feed-card">
+          <h3>LIVE PURCHASE FEED</h3>
+          <div id="feed" class="feed"><div class="feed-empty">no task running. pick one above.</div></div>
+        </div>
+      </div>
+      <aside>
+        <div class="card hard meter-card">
+          <h3>BUDGET</h3>
+          <div class="nb-meter"><div class="nb-fill" id="meter-fill"></div></div>
+          <div class="mono meter-label" id="meter-label">0 / 0 SOL</div>
+        </div>
+        <div class="card hard">
+          <h3>VENDORS</h3>
+          <div id="vendor-cards"></div>
+          <p class="note">They deliver only against a settled receipt that names them as payee.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section id="screen-report" class="screen">
+    <h2 class="head">THE REPORT</h2>
+    <div id="report-body"><p class="lede">No finished task yet. Run one in the shop.</p></div>
+  </section>
+
+  <!-- AUDIT -->
+  <section id="screen-audit" class="screen">
+    <h2 class="head">THE AUDIT ROOM</h2>
+    <div class="card hard rules-card">
+      <h3>RULES ON CHAIN</h3>
+      <dl id="rules-list" class="rules"></dl>
+      <h3 style="margin-top:14px;">ALLOWLIST</h3>
+      <ul id="payees" class="payees mono"></ul>
+    </div>
+    <div class="card hard">
+      <h3>EVERY DECISION, IN ORDER</h3>
+      <p class="note">Refusals are receipts too, because a refusal is the evidence.</p>
+      <table id="receipt-table">
+        <thead><tr><th>#</th><th>STATUS</th><th>AMOUNT</th><th>PURPOSE</th><th>REASON</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>THE SHOP. The gate is the product. The agent is not trusted and does not need to be.</footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

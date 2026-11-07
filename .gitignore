@@ -1,0 +1,16 @@
+# Secrets. Never commit .env; the example file holds placeholders only.
+.env
+.env.*
+!.env.example
+
+# Dependencies and build artifacts
+node_modules/
+target/
+.anchor/
+.next/
+dist/
+
+# Logs and OS noise
+*.log
+.DS_Store
+Thumbs.db

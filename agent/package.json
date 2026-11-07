@@ -1,0 +1,20 @@
+{
+  "name": "krypt-solana-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "errands": "node src/errands.mjs",
+    "attack": "node src/attack.mjs",
+    "sim": "node src/sim.mjs",
+    "receipts": "node src/receipts.mjs",
+    "vendor": "node vendor-server.mjs",
+    "demo": "node demo-server.mjs"
+  },
+  "dependencies": {
+    "@anchor-lang/core": "^1.2.2",
+    "@solana/web3.js": "^1.95.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

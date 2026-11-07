@@ -1,0 +1,11 @@
+[toolchain]
+
+[programs.devnet]
+krypt_solana = "7VCNmeFyt1oRm8u2GxKDmJPnXjM7hmM5Vq66SxKYcX7B"
+
+[provider]
+cluster = "devnet"
+wallet = "~/krypt-solana/keys/owner.json"
+
+[scripts]
+test = ""
