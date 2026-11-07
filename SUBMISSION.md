@@ -48,7 +48,7 @@ property of the chain.
 
 ## Links to fill
 
-- Repo: [public repo url, Sunday]
+- Repo: https://github.com/Valorian0108/cipher_sol
 - Video: [demo recording, Sunday morning]
 - Live demo: [the page is local by design; the video carries it, or a
   tunnelled url if time allows]
